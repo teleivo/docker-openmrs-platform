@@ -4,7 +4,7 @@ MAINTAINER teleivo
 
 ENV OPENMRS_HOME="${CATALINA_HOME}/.OpenMRS"
 ENV OPENMRS_MODULES="${OPENMRS_HOME}/modules"
-ENV OPENMRS_PLATFORM_URL="http://mavenrepo.openmrs.org/nexus/content/repositories/public/org/openmrs/web/openmrs-webapp/2.0.0-SNAPSHOT/openmrs-webapp-2.0.0-20160630.235258-195.war"
+ENV OPENMRS_PLATFORM_URL="http://mavenrepo.openmrs.org/nexus/service/local/repositories/releases/content/org/openmrs/web/openmrs-webapp/2.0.0/openmrs-webapp-2.0.0.war"
 ENV DOCKERIZE_VERSION v0.2.0
 
 RUN apk add --update curl
