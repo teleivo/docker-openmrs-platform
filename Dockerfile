@@ -6,6 +6,7 @@ ENV OPENMRS_HOME="${CATALINA_HOME}/.OpenMRS"
 ENV OPENMRS_MODULES="${OPENMRS_HOME}/modules"
 ENV OPENMRS_PLATFORM_URL="http://mavenrepo.openmrs.org/nexus/service/local/repositories/releases/content/org/openmrs/web/openmrs-webapp/2.0.0/openmrs-webapp-2.0.0.war"
 ENV DOCKERIZE_VERSION v0.2.0
+ENV WAIT_SECONDS_FOR_DB 30
 
 RUN apk add --update curl
 
@@ -26,5 +27,5 @@ CMD dockerize \
  -template "/usr/local/tomcat/bin/setenv.sh.tmpl:/usr/local/tomcat/bin/setenv.sh" \
  -template "/usr/local/tomcat/openmrs-runtime.properties.tmpl:/usr/local/tomcat/openmrs-runtime.properties" \
  -wait "tcp://${MYSQL_HOST}:${MYSQL_PORT}" \
- -timeout "${WAIT_SECONDS_FOR_MYSQL}s" \
+ -timeout "${WAIT_SECONDS_FOR_DB}s" \
  catalina.sh run
